@@ -1,0 +1,230 @@
+/* Page d'acceuil*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: large;
+    background-color: rgb(233, 233, 233);
+}
+/* Connexion*/ 
+
+.connexion {
+padding-left: 5%;
+padding-right: 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.connexion--block{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.connexion--input {
+    padding-right: 1rem;
+}
+
+/* Inscription */ 
+
+.inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5%;
+}   
+
+.inscription--input {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    padding: 1rem;
+}
+
+.inscription--input > input {
+    margin-top: 0.5rem;
+    height: 1.2rem;
+    border-width: 0.2rem;
+    border-color: black;
+}
+
+.connexion--input > input {
+    border-color: black;
+border-width: 0.2rem;
+}
+
+/* Section Publication */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    background-color: #fff;
+}
+
+#addFile {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.publish-button {
+    width: 15%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(48, 128, 207, 0.8);
+    font-size: 16px;
+    color: white;
+}
+
+.post-content {
+    margin-top: 10px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    border-radius: 30px;
+    border-color: black;
+    padding: 5px;
+}
+.post-title {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    border-radius: 30px;
+    border-color: black;
+    padding: 5px;
+}
+
+/* Mur des publications */
+
+/* Header */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    height: 80px;
+}
+
+.nav-item {
+    color: rgb(48, 128, 207, 0.8);
+    font-size: 60px;
+}
+/* Post */ 
+
+.post-header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    font-weight: 300;
+}
+
+.post-card {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.content-post {
+    padding: 15px;
+}
+
+.content-comment {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.comment-input {
+    background-color: rgb(233, 233, 233);
+    border-radius: 30px;
+    height: 50px;
+    width: 80%;
+}
+
+.comment-button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.dropbtn {
+    position: relative;
+    left: 95%;
+    top: 5%;
+    width: 30px;
+}
+
+.modifybtn {
+    position: relative;
+    left: 85%;
+    top: 5%;
+    width: 30px;
+}
+
+
+.drop-comment {
+    position: relative;
+    left: 95%;
+    top: 5%;
+    width: 30px;
+}
+.content-post:hover {
+    box-shadow: 0px 0px 5px 3px rgb(265, 265, 265, 0.5);
+}
+
+/* Page account */ 
+
+.user-container {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 1rem;
+    width: 60%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.account--input {
+    text-align: center;
+    padding: 0.5rem;
+}

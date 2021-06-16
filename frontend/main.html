@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/77c65d2f94.js" crossorigin="anonymous"></script>
+    <title>Projet 7</title>
+
+</head>
+
+<body>
+    <header>
+        <a href="connexion.html" class="nav-item"><i class="fas fa-sign-out-alt"></i></i></a>
+        <a href="main.html" class="logo nav-item"><img src="img/icon.png" alt="logo groupomania" class="logo"></a>
+        <a href="account.html" class="nav-item"><i class="fas fa-user-circle account-logo"></i></a>
+    </header>
+
+    <section class="post">
+        <form class="container">
+            <label class="post-header">Créer votre publication</label>
+            <input id="title" class="post-title" type="text" placeholder="Quoi de neuf ?">
+            <input id="content" class="post-content" type="text" placeholder="Saluez vos collègues !">
+            <input id="addFile" type="file">
+            <button id="publish" class="publish-button" type="submit">Publiez !</button>
+        </form>
+    </section>
+
+    <main>
+        <div id="wall" class="content">
+
+
+        </div>
+    </main>
+    <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="Post.js"></script>
+    <script type="text/javascript" src="Comment.js"></script>
+    
+    
+   
+   
+</body>
+
+</html>
