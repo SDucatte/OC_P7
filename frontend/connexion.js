@@ -67,7 +67,7 @@ signup.addEventListener('click', function () {
         })
         .then((result) => {
             localStorage.setItem("token", result.token);
-            localStorage.setItem("userId", result.UserId);
+            localStorage.setItem("userId", result.userId);
             localStorage.setItem("isAdmin", result.isAdmin);
             window.location.assign('main.html');
 

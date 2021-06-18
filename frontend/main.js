@@ -22,22 +22,22 @@ appelAjax({ api: "/api/post" }).then((listPost) => {
             dropPost(dropPostId);
         });
     });
-/*
+
     // Modification de post
     let modifyBtn = document.querySelectorAll('.modifybtn');
     modifyBtn.forEach(otherBtn => {
         otherBtn.addEventListener('click', function () {
             let modifyPostId = this.closest(".post-card").dataset.id;
-            modifyPost(modifyPostId);
+            localStorage.setItem('modifyPostId', modifyPostId);
         });
     });
 
     // Suppression Commentaire
-    */
+
     let dropCommentBtn = document.querySelectorAll('.drop-comment');
     dropCommentBtn.forEach(anotherBtn => {
-        anotherBtn.addEventListener('click', function (){
-            let dropCommentId = this.closest(".post-card").dataset.id;
+        anotherBtn.addEventListener('click', function () {
+            let dropCommentId = this.closest(".comment-section").dataset.commentid;
             dropComment(dropCommentId);
         });
     });
@@ -48,6 +48,8 @@ appelAjax({ api: "/api/post" }).then((listPost) => {
         var failed = "Oups, une erreur s'est produite !";
         alert(failed);
     });
+
+
 
 // Nouveau post 
 let publish = document.getElementById('publish');
@@ -94,6 +96,10 @@ publish.addEventListener('click', function (e) {
 });
 
 
+
+
+
+
 // Fonction addComment
 
 function addComment(comment, postId) {
@@ -103,7 +109,6 @@ function addComment(comment, postId) {
         alert(missingValue);
         valid = false
     }
-
     if (valid) {
         let dataComment = {
             comment: {
@@ -135,7 +140,6 @@ function addComment(comment, postId) {
 }
 
 // fonction suppression de post
-
 function dropPost(dropPostId) {
     // On vérifie que l'auteur du post et la personne qui souhaite supprimer le post sont bien les mêmes
 
@@ -151,22 +155,11 @@ function dropPost(dropPostId) {
             window.location.reload();
         })
         .catch((resultFailed) => {
-            var resultFailed = "Oups, une erreur s'est produite !";
+            var resultFailed = "Il semblerait que ce ne soit pas votre post !";
             alert(resultFailed);
 
         });
 }
-/*
-// Fonction Modification de Post
-function modifyPost (modifyPostId) {
-
-}
-
-
-
-*/
-
-
 
 // Fonction suppression de commentaire
 function dropComment(dropCommentId) {
@@ -184,13 +177,27 @@ function dropComment(dropCommentId) {
             window.location.reload();
         })
         .catch((resultFailed) => {
-            var resultFailed = "Oups, une erreur s'est produite !";
+            var resultFailed = "Il semblerait que ce ne soit pas votre commentaire !";
             alert(resultFailed);
         });
 }
 
+// Modification de post
+
+
+
+
+// Fonction Modification de Post
+
+
+
+
+
+
+
 
 /*
+
 // Supprimer post
 .then(() => {
     let dropBtn = document.getElementById('drop');
@@ -217,7 +224,4 @@ function dropComment(dropCommentId) {
 })
 
  */
-
-
-
 

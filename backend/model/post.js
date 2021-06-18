@@ -12,7 +12,7 @@ const Post = bdd.define('Post', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    // Pas besoin de rajouter la clé étrangère ici ? Envoyer par défaut avec la relation Post.belongsTo(User);
+
     imageUrl: {
         type: DataTypes.STRING, 
     }

@@ -17,30 +17,22 @@
         <a href="account.html" class="nav-item"><i class="fas fa-user-circle account-logo"></i></a>
     </header>
 
-    <section class="post">
+    <section class="modify-post" id="modifyPost">
         <form class="container">
-            <label class="post-header">Créer votre publication</label>
-            <input id="title" class="post-title" type="text" placeholder="Quoi de neuf ?">
-            <input id="content" class="post-content" type="text" placeholder="Saluez vos collègues !">
-            <input id="addFile" type="file">
-            <button id="publish" class="publish-button" type="submit">Publiez !</button>
+            <label class="post-header">Modifer votre publication</label>
+            <input id="newTitle" class="post-title" type="text" placeholder="Quoi de neuf ?">
+            <input id="newContent" class="post-content" type="text" placeholder="Saluez vos collègues !">
+            <input id="addNewFile" type="file">
+            <button id="modify" class="publish-button" type="submit">Publiez !</button>
         </form>
     </section>
 
-    <main>
-        <div id="wall" class="content">
-
-
-        </div>
-    </main>
     <script type="text/javascript" src="ajax.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="Post.js"></script>
-    <script type="text/javascript" src="Comment.js"></script>
-    
-    
-   
-   
+  
+    <script type="text/javascript" src="modifyPost.js"></script>
+
+
+
 </body>
 
 </html>

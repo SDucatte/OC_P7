@@ -68,7 +68,7 @@ exports.deleteComment = (req, res, next) => {
         where: { id: req.params.id }
     })
         .then(theComment => {
-            if (thePost.UserId != req.token.userId || req.token.isAdmin == true) {
+            if (theComment.UserId != req.token.userId && !req.token.isAdmin) {
                 res.status(403).json({ 'error': 'Action interdite !' });
             } else {
                 theComment.destroy()
@@ -84,5 +84,7 @@ exports.deleteComment = (req, res, next) => {
             }
             
         })
-        
+        .catch((err) => {
+            res.status(500).json({ 'error': 'Une erreur s est produite !' });
+        }) 
 }

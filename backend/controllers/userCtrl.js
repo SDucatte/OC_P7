@@ -7,6 +7,8 @@ const { User } = require('../model/index');
 
 // Création de l'utilsateur
 exports.signup = (req, res, next) => {
+
+
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
@@ -16,10 +18,21 @@ exports.signup = (req, res, next) => {
         password: hash
       });
 
-      user.save()
-        .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
-        .catch(error => res.status(400).json({ error }));
+      var name = req.body.name;
+      var lastName = req.body.lastName;
+      var email = req.body.email;
+      var password = hash;
+      
+      if (name == "" || lastName == "" || email == "" || password == "") {
+        return res.status(401).json({ error: 'Données manquantes !' });
+      }
+
+        user.save()
+      
+          .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
+          .catch(error => res.status(400).json({ error }));
     })
+
     .catch(error => res.status(500).json({ error }));
 };
 
@@ -31,11 +44,11 @@ exports.login = (req, res, next) => {
     .then(user => {
       if (!user) {
         return res.status(401).json({ error: 'Utilisateur non trouvé !' });
-      }  
+      }
 
       if (user.isDisable) {
         return res.status(401).json({ error: 'Compte désactivé !' });
-      } 
+      }
       bcrypt.compare(req.body.password, user.password)
         .then(valid => {
           if (!valid) {
@@ -65,7 +78,6 @@ exports.login = (req, res, next) => {
 
 exports.account = (req, res, next) => {
   User.findOne({
-    // Ici erreur peut etre ?
     where: { id: req.token.userId }
   })
     .then(theAccount => {
@@ -85,10 +97,10 @@ exports.dropAccount = (req, res, next) => {
   })
     .then((user) => {
       user.isDisable = true;
-      user.name = "compte supprimé", 
-      user.lastName ="", 
-      user.email ="", 
-      user.password= ""
+      user.name = "compte supprimé",
+        user.lastName = "",
+        user.email = "",
+        user.password = ""
       user.save()
         .then(user => {
           res.status(200).json(user);
@@ -100,6 +112,4 @@ exports.dropAccount = (req, res, next) => {
     .catch((err) => {
       res.status(500).json({ 'error': 'Une erreur s est produite !' });
     })
-
-
 };

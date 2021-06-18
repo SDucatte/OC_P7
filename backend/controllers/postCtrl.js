@@ -90,7 +90,7 @@ exports.deletePost = (req, res, next) => {
             Test de suppression de post avec un autre utilisateur, 
             Alerte l'erreur 500 du catch, mais dans la console affiche bien l'erreur 403
             */
-            if (thePost.UserId != req.token.userId || req.token.isAdmin == true) {
+            if (thePost.UserId != req.token.userId && !req.token.isAdmin) {
                 res.status(403).json({ 'error': 'Action interdite !' });
             } else {
                 thePost.destroy()
@@ -105,5 +105,7 @@ exports.deletePost = (req, res, next) => {
             }
 
         })
-
+        .catch((err) => {
+            res.status(500).json({ 'error': 'Une erreur s est produite !' });
+        });
 }
