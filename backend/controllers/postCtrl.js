@@ -60,7 +60,10 @@ exports.modifyPost = (req, res, next) => {
             if (thePost.UserId != req.token.userId && !req.token.isAdmin) {
                 res.status(403).json({ 'error': 'Action interdite !' });
             } else {
-                thePost = Object.assign(thePost, req.body.post);
+                thePost = Object.assign(thePost, JSON.parse(req.body.post));
+                if (req.file != undefined) {
+                    thePost.imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`;
+                }
                 thePost.save()
                     .then(() => {
                         res.status(201).json({

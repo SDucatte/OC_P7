@@ -18,8 +18,8 @@ modifyBtn.addEventListener('click', function (e) {
     if (valid) {
         let newData = new FormData();
         newData.append("post", JSON.stringify({
-            newTitle: newTitle.value,
-            newContent: newContent.value,
+            title: newTitle.value,
+            content: newContent.value,
             UserId: userId
         }));
         newData.append("image", document.getElementById('addNewFile').files[0]);
