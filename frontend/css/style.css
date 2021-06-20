@@ -422,6 +422,11 @@ p {
   margin-top: -1rem;
 }
 
+.comment-section {
+  max-height: 100px;
+  margin-bottom: -1rem;
+}
+
 /* Responsive */
 @media screen and (max-width: 800px) {
   .post-card {

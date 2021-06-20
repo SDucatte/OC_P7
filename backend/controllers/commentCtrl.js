@@ -5,6 +5,8 @@ var jwt = require('jsonwebtoken');
 const { Comment, Post, User } = require('../model/index');
 
 // Actions
+
+// Récupération de tous les commentaires
 exports.getAllComment = (req, res, next) => {
     Comment.findAll({ include: Post })
         .then(listComment => {
@@ -23,7 +25,7 @@ exports.getOneComment = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
-
+// Création commentaire
 exports.createComment = (req, res, next) => {
     const userComment =  req.body.comment;
     Comment.create({
@@ -39,30 +41,7 @@ exports.createComment = (req, res, next) => {
         })
 }
 
-/*
-exports.modifyComment = (req, res, next) => {
-    // On souhaite récupére le post
-    Comment.findOne({
-        where: { id: req.params.id }
-    })
-        .then(theComment => {
-            if (theComment.UserId != req.token.userId && !req.token.isAdmin) {
-                res.status(403).json({ 'error': 'Action interdite !' });
-            } else {
-                theComment = Object.assign(theComment, req.body.comment);
-                theComment.save()
-                    .then(() => {
-                        res.status(201).json({
-                            message: 'Commentaire modifié !'
-                        })
-                    })
-                    .catch((err) => {
-                        res.status(500).json({ 'error': 'Une erreur s est produite !' });
-                    })
-            }
-        })
-}
-*/
+// Suppression commentaire
 exports.deleteComment = (req, res, next) => {
     Comment.findOne({
         where: { id: req.params.id }

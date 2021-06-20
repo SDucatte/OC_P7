@@ -1,15 +1,15 @@
 const User = require('./user');
 const Post = require('./post');
 const Comment = require('./comment');
-// Rajouter ici les relations
 
+// Ajout des relations
 Post.belongsTo(User);
 
 Post.hasMany(Comment);
 
 Comment.belongsTo(User);
 
-// Un fois les models terminés, remplacer force par alter
+// Synchronisation automatique
 User.sync({alter: true});
 Post.sync({alter: true});
 Comment.sync({alter: true});

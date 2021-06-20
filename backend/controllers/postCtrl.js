@@ -20,7 +20,7 @@ exports.getAllPost = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
-
+//  Récupération d'un post
 exports.getOnePost = (req, res, next) => {
     Post.findOne({
         where: { id: req.params.id }
@@ -31,8 +31,8 @@ exports.getOnePost = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
+//  Création d'un post
 exports.createPost = (req, res, next) => {
-    // Récupération Données du Post
     const userPost = JSON.parse(req.body.post);
     if (req.file != undefined) {
         userPost.imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`;
@@ -50,8 +50,8 @@ exports.createPost = (req, res, next) => {
         })
 }
 
+// Modification d'un post
 exports.modifyPost = (req, res, next) => {
-    // On souhaite récupére le post
     Post.findOne({
         where: { id: req.params.id }
     })
@@ -79,19 +79,12 @@ exports.modifyPost = (req, res, next) => {
         })
 }
 
+// Suppression d'un post
 exports.deletePost = (req, res, next) => {
     Post.findOne({
         where: { id: req.params.id }
     })
         .then(thePost => {
-            /* 
-            Comment vérifier la condition la condition isAdmin ? 
-            (thePost.UserId != req.token.userId && !req.token.isAdmin)
-            Par défaut, utilisateur isAdmin = false
-
-            Test de suppression de post avec un autre utilisateur, 
-            Alerte l'erreur 500 du catch, mais dans la console affiche bien l'erreur 403
-            */
             if (thePost.UserId != req.token.userId && !req.token.isAdmin) {
                 res.status(403).json({ 'error': 'Action interdite !' });
             } else {
