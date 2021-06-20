@@ -59,11 +59,13 @@ header {
   font-size: 60px;
 }
 
-/* page */
 .logo-connexion {
-  width: 40%;
+  max-height: 100px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
+/* page */
 .container--log {
   display: flex;
   flex-direction: column;
@@ -150,6 +152,14 @@ label {
   outline-style: none;
 }
 
+/* Responsive */
+@media screen and (max-width: 800px) {
+  .container--log {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 /* Page account */
 .user-container {
   margin-left: auto;
@@ -233,8 +243,19 @@ label {
   height: 25px;
 }
 
+/* Responsive */
+@media screen and (max-width: 800px) {
+  .container, .user-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container, .user-container {
+    width: 95%;
+  }
+}
 /* compenent */
-/*Bouton principaux */
+/*Bouton Générique*/
 .btn {
   padding: 0.5rem;
   margin-top: 15px;
@@ -259,7 +280,7 @@ label {
   border-radius: 5px;
 }
 
-/*Bouton principaux */
+/* Petit Boutons Actions*/
 .comment-button {
   border-radius: 50%;
   width: 50px;
@@ -279,6 +300,7 @@ label {
   left: 85%;
   top: 5%;
   width: 30px;
+  color: honeydew;
 }
 
 .drop-comment {
@@ -288,7 +310,38 @@ label {
   width: 30px;
 }
 
-/*Bouton suppression compte */
+.logout {
+  width: auto;
+  height: 60px;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+  .dropbtn {
+    position: relative;
+    left: 95%;
+    top: 5%;
+    width: 30px;
+  }
+
+  .modifybtn {
+    position: relative;
+    left: 75%;
+    top: 5%;
+    width: 30px;
+  }
+
+  .drop-comment {
+    position: relative;
+    left: 90%;
+    top: 15px;
+    width: 30px;
+  }
+
+  .btn--file {
+    width: 25%;
+  }
+}
 /* Post */
 p {
   font-size: 20px;
@@ -341,7 +394,7 @@ p {
   font-size: 14px;
 }
 
-h2, .title--post {
+.title--post {
   font-weight: 400;
 }
 
@@ -367,6 +420,22 @@ h2, .title--post {
 .content--comment {
   font-size: 18px;
   margin-top: -1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+  .post-card {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .post-card {
+    width: 95%;
+  }
+
+  h2 > .title--post {
+    max-width: 200px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

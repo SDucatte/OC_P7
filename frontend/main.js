@@ -14,7 +14,6 @@ appelAjax({ api: "/api/post" }).then((listPost) => {
         });
     });
     // Suppression Post
-    // Chose bizarre : Lorsque je créé un post, je peux supprimer mais lorsque j'ai un nouveau token, ca ne marche pas
     let dropBtn = document.querySelectorAll('.dropbtn');
     dropBtn.forEach(otherBtn => {
         otherBtn.addEventListener('click', function () {
@@ -141,10 +140,6 @@ function addComment(comment, postId) {
 
 // fonction suppression de post
 function dropPost(dropPostId) {
-    // On vérifie que l'auteur du post et la personne qui souhaite supprimer le post sont bien les mêmes
-
-   // Récupération Id du post
-   
     appelAjax({
         api: '/api/post/' + dropPostId,
         method: "DELETE"
@@ -163,10 +158,6 @@ function dropPost(dropPostId) {
 
 // Fonction suppression de commentaire
 function dropComment(dropCommentId) {
-    // On vérifie que l'auteur du post et la personne qui souhaite supprimer le post sont bien les mêmes
-
-   // Récupération Id du post
-   
     appelAjax({
         api: '/api/comment/' + dropCommentId,
         method: "DELETE"
@@ -181,47 +172,4 @@ function dropComment(dropCommentId) {
             alert(resultFailed);
         });
 }
-
-// Modification de post
-
-
-
-
-// Fonction Modification de Post
-
-
-
-
-
-
-
-
-/*
-
-// Supprimer post
-.then(() => {
-    let dropBtn = document.getElementById('drop');
-
-    dropBtn.addEventListener('click', function () {
-        appelAjax({
-            api: '/api/post/:id',
-            method: "DELETE",
-            status: 200,
-            listHeader: [
-                { "name": "content-type", "value": "application/json" }
-            ]
-        })
-        .then(() => {
-            var resultSuccess = "Votre post a bien été supprimé !";
-            alert(resultSuccess);
-        })
-        .catch((resultFailed) => {
-            var resultFailed = "Oups, une erreur s'est produite !";
-            alert(resultFailed);
-
-        });
-    });
-})
-
- */
 

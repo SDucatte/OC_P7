@@ -1,8 +1,7 @@
-
+// Logique modification post
 let newTitle = document.getElementById('newTitle');
 let newContent = document.getElementById('newContent');
 let userId = localStorage.getItem('userId');
-
 let modifyBtn = document.getElementById('modify');
 
 modifyBtn.addEventListener('click', function (e) {

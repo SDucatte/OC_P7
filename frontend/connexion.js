@@ -66,11 +66,8 @@ signup.addEventListener('click', function () {
             ]
         })
         .then((result) => {
-            localStorage.setItem("token", result.token);
-            localStorage.setItem("userId", result.userId);
-            localStorage.setItem("isAdmin", result.isAdmin);
-            window.location.assign('main.html');
-
+            alert("Félicitation ! Votre compte a bien été créé ! Veuillez vous connecter");
+           
         }).catch((resultFailed) => {
             var resultFailed = "Oups, une erreur s'est produite !";
             alert (resultFailed);

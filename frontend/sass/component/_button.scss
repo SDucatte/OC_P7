@@ -1,4 +1,4 @@
-/*Bouton principaux */
+/*Bouton Générique*/
 .btn {
     padding: 0.5rem;
     margin-top: 15px;
@@ -23,15 +23,13 @@
     border-radius: 5px;
 }
 
-/*Bouton principaux */
+/* Petit Boutons Actions*/
 .comment-button {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     border: none;
 }
-
-
 
 .dropbtn {
     position: relative;
@@ -45,6 +43,7 @@
     left: 85%;
     top: 5%;
     width: 30px;
+    color: honeydew;
 }
 
 .drop-comment {
@@ -54,4 +53,36 @@
     width: 30px;
 }
 
-/*Bouton suppression compte */
+.logout {
+    width: auto;
+    height: 60px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 800px){
+    .dropbtn {
+        position: relative;
+        left: 95%;
+        top: 5%;
+        width: 30px;
+    }
+    
+    .modifybtn {
+        position: relative;
+        left: 75%;
+        top: 5%;
+        width: 30px;
+    }
+
+    .drop-comment {
+        position: relative;
+        left: 90%;
+        top: 15px;
+        width: 30px;
+    }
+
+    .btn--file{
+        width: 25%;
+    }
+}

@@ -1,6 +1,3 @@
-.logo-connexion {
-    width: 40%;
-}
 
 .container--log {
     display: flex;
@@ -90,4 +87,14 @@ label {
 
     border-width: 3px;
     outline-style:none;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 800px){
+    .container--log {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }

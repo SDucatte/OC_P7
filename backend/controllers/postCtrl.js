@@ -6,7 +6,6 @@ var jwt = require('jsonwebtoken');
 const { Post, User, Comment } = require('../model/index');
 
 // Actions 
-
 //  Récupération de tous les posts
 exports.getAllPost = (req, res, next) => {
     Post.findAll({

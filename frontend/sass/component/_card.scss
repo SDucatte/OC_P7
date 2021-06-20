@@ -50,7 +50,7 @@ p {
     font-size: 14px;
 }
 
-h2, .title--post {
+.title--post {
     font-weight: 400;
 }
 
@@ -79,3 +79,21 @@ h2, .title--post {
     margin-top: -1rem;
 }
 
+
+/* Responsive */
+
+@media screen and (max-width: 800px){
+    .post-card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .post-card {
+        width: 95%;
+    }
+    h2 > .title--post {
+        max-width: 200px;
+
+    }
+}

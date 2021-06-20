@@ -7,9 +7,13 @@ const { User } = require('../model/index');
 
 // Création de l'utilsateur
 exports.signup = (req, res, next) => {
-
-
-  bcrypt.hash(req.body.password, 10)
+// Vérification si l'user existe déjà
+User.findOne({
+  where: { email: req.body.email }
+})
+.then(user => {
+  if (!user) {
+    bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
         name: req.body.name,
@@ -28,10 +32,14 @@ exports.signup = (req, res, next) => {
       }
 
         user.save()
+        .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
+        .catch(error => res.status(400).json({ error }));
       
-          .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
-          .catch(error => res.status(400).json({ error }));
     })
+  }
+})
+
+
 
     .catch(error => res.status(500).json({ error }));
 };

@@ -9,15 +9,13 @@ class Post {
         return `<div class="post-card" data-id='${this.id}'>
         <div class="content--post">
             <div class="btn--block">
-            <button class="dropbtn" id="dropButton"><i class="far fa-trash-alt"></i></button>
-            <button class="modifybtn" id="modifyButton">
-            <a href="modifyPost.html">
+            <a class="dropbtn" id="dropButton"><i class="far fa-trash-alt"></i></a>
+            <a class="modifybtn" id="modifyButton" href="modifyPost.html">
             <i class="far fa-edit"></i>
             </a>
-            </button>
             </div>
             <div class= "info--post">
-                <h2 class"title--post">${this.title}</h2>  
+                <h2 id="title--post" class"title--post">${this.title}</h2>  
                 <span class="user user--publish">publié par : ${this.User.name}</span>
                 <p class"content content--post">${this.content}</p>
                 ${this.showImg()}

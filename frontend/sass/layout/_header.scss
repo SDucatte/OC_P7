@@ -1,6 +1,4 @@
 /* Header  Connexion*/
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -18,4 +16,9 @@ header {
 .nav-item {
     color: rgb(48, 128, 207, 0.8);
     font-size: 60px;
+}
+.logo-connexion {
+    max-height: 100px;
+    margin-right: auto;
+    margin-left: auto;
 }
