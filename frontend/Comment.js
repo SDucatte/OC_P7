@@ -8,9 +8,11 @@ class Comment {
         // Comment récupérer le nom de la table user pour l'afficher ? Ajouter quelque
         return `
         <div class="comment-section" data-commentid='${this.id}'>
-        <h3>${this.User.name}</h3>
         <button class="drop-comment"><i class="far fa-trash-alt"></i></button>
-        <p>${this.comment}</p>
+            <div class="block--comment">
+                <h3 class="title--comment">${this.User.name}</h3>
+                <p class="content--comment">${this.comment}</p>
+            </div>
         </div>
         `
     }

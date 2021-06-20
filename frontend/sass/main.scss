@@ -2,14 +2,15 @@
 @import "base/base";
 
 /* layout */ 
-@import "layout/footer";
 @import "layout/header";
 
 /* page */
-
+@import "pages/connexion";
 @import "pages/account";
 @import "pages/wall";
+
 /* compenent */
 @import "component/button";
+@import "component/card";
 
 

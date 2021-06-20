@@ -2,107 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-size: large;
-    background-color: rgb(233, 233, 233);
+    /*background-color: rgb(233, 233, 233);*/
+    background-color: rgb(168, 181, 202);
+    
 }
 
-/* Connexion*/ 
 
-.connexion {
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    }
-    
-    .connexion--block{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-    
-    .connexion--input {
-        padding-right: 1rem;
-    }
-    
-    /* Inscription */ 
-    
-    .inscription {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 5%;
-    }   
-    
-    .inscription--input {
-        display: flex;
-        flex-direction: column;
-        width: 33%;
-        padding: 1rem;
-    }
-    
-    .inscription--input > input {
-        margin-top: 0.5rem;
-        height: 1.2rem;
-        border-width: 0.2rem;
-        border-color: black;
-    }
-    
-    .connexion--input > input {
-        border-color: black;
-    border-width: 0.2rem;
-    }
-    
-    /* Section Publication */
-    
-    .post {
-        display: flex;
-        flex-direction: column;
-        border-radius: 30px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-        background-color: #fff;
-    }
+
+
     
     
-    #addFile {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        font-size: 14px;
-    }
-    .publish-button {
-        width: 15%;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        border-radius: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: rgb(48, 128, 207, 0.8);
-        font-size: 16px;
-        color: white;
-    }
-    
-    .post-content {
-        margin-top: 10px;
-        width: 30%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 100px;
-        border-radius: 30px;
-        border-color: black;
-        padding: 5px;
-    }
-    .post-title {
-        width: 30%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 20px;
-        border-radius: 30px;
-        border-color: black;
-        padding: 5px;
-    }

@@ -6,64 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Projet 7</title>
-
+    
 </head>
 
 <body>
-    <section class="connexion">
-        <img src="img/icon-left-font-monochrome-black.svg" alt="logo groupomania">
+    <header>
+        <img src="img/icon-left-font-monochrome-white-resize-min.png" alt="logo groupomania" class="logo-connexion">
+    </header>
+    
+<main>
+
+
+
+    <section class="container--log connexion">
+        <h2 class="title">Vous êtes nouveau ? Créez vous un compte !</h2>
         <div class="connexion--block">
             <div class="connexion--input">
                 <label>
                     E-mail
                 </label>
-                <input type="email" name="email">
+                <input type="email" name="email" class="input">
             </div>
             <div class="connexion--input">
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="password">
+                <input type="password" name="password" class="input">
             </div>
-            <button id="login">Connexion</button>
+            <button id="login" class="btn btn--log">Connexion</button>
         </div>
     </section>
-
-
-    <section class="inscription">
-        <h2>Vous êtes nouveau ? Créez vous un compte !</h2>
-
-        <div class="inscription--input">
-            <label>
-                Prénom
-            </label>
-            <input type="text" name="name">
+    
+    <section class="container--log inscription">
+        <h2 class="title">Vous êtes nouveau ? Créez vous un compte !</h2>
+        
+        <div class="connexion--block">
+            <div class="inscription--input">
+                <label>
+                    Prénom
+                </label>
+                <input type="text" name="name" class="input">
+            </div>
+            
+            <div class="inscription--input">
+                <label>
+                    Nom
+                </label>
+                <input type="text" id="lastName" class="input">
+            </div>
+            
+            <div class="inscription--input">
+                <label>
+                    E-mail
+                </label>
+                <input type="email" name="email" class="input">
+            </div>
+            
+            <div class="inscription--input">
+                <label>
+                    Mot de passe
+                </label>
+                <input type="password" name="password" class="input">
+            </div>
+            
+            <button id="signup" class="btn btn--log">Inscription</button>
         </div>
-
-        <div class="inscription--input">
-            <label>
-                Nom
-            </label>
-            <input type="text" id="lastName">
-        </div>
-
-        <div class="inscription--input">
-            <label>
-                E-mail
-            </label>
-            <input type="email" name="email">
-        </div>
-
-        <div class="inscription--input">
-            <label>
-                Mot de passe
-            </label>
-            <input type="password" name="password">
-        </div>
-
-        <button id="signup">Inscription</button>
     </section>
-
+    
+</main>
     <script type="text/javascript" src="ajax.js"></script>
     <script type="text/javascript" src="connexion.js"></script>
     

@@ -1,17 +1,39 @@
 /* Page account */ 
-
 .user-container {
-    background-color: white;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    top: 1rem;
     width: 60%;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(9, 31, 67);
+    border-radius: 30px;
 }
 
 .account--input {
     text-align: center;
     padding: 0.5rem;
+}
+
+.account--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #091f43;
+    padding: 2rem;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.title--account {
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #d1515a;
+}
+
+.info--account {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
 }

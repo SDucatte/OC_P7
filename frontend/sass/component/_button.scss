@@ -1,0 +1,57 @@
+/*Bouton principaux */
+.btn {
+    padding: 0.5rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    font-size: 16px;
+    color: rgb(9, 31, 67);
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.btn--log:hover{
+    transform: scale(1.15);
+    transition-duration: 0.3s;
+}
+
+.btn--file {
+    border-radius: 5px;
+}
+
+/*Bouton principaux */
+.comment-button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+
+
+
+.dropbtn {
+    position: relative;
+    left: 95%;
+    top: 5%;
+    width: 30px;
+}
+
+.modifybtn {
+    position: relative;
+    left: 85%;
+    top: 5%;
+    width: 30px;
+}
+
+.drop-comment {
+    position: relative;
+    left: 95%;
+    top: 5%;
+    width: 30px;
+}
+
+/*Bouton suppression compte */

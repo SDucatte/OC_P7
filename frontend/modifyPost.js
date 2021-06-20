@@ -1,23 +1,3 @@
-/*
-// Affichage du post à modifier
-
-
-appelAjax({api: "/api/post/" + modifyPostId}).then(() => {
-let modifyPost = document.getElementById('modifyPost');
-modifyPost.innerHTML += showModifyPost();
-/*
-    let modifyPostId = document.querySelector('.container').dataset.id;
-    modifyPost(modifyPostId);
-    
-})
-.catch((failed) => {
-    var failed = "Oups, une erreur s'est produite !";
-    alert(failed);
-}); 
-
-*/
-
-
 
 let newTitle = document.getElementById('newTitle');
 let newContent = document.getElementById('newContent');
@@ -51,7 +31,7 @@ modifyBtn.addEventListener('click', function (e) {
             status: 201
         })
             .then(() => {
-                var resultSuccess = "Votre post a bien été publié !";
+                var resultSuccess = "Votre post a bien été modifié !";
                 alert(resultSuccess);
                 window.location.assign('main.html');
             })

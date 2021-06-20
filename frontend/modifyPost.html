@@ -12,20 +12,21 @@
 
 <body>
     <header>
-        <a href="connexion.html" class="nav-item"><i class="fas fa-sign-out-alt"></i></i></a>
-        <a href="main.html" class="logo nav-item"><img src="img/icon.png" alt="logo groupomania" class="logo"></a>
-        <a href="account.html" class="nav-item"><i class="fas fa-user-circle account-logo"></i></a>
-    </header>
+        <a href="connexion.html" class="nav-item"><img src="img/exit.png" alt="bouton déconnexion" class="nav--img"></a>
+        <a href="main.html" class="logo nav-item"><img src="img/icon.png" alt="logo groupomania" class="nav--img"></a>
+        <a href="account.html" class="nav-item"><img src="img/account.png" alt="bouton accéder à votre compte"
+            class="nav--img"></a>
+        </header>
 
-    <section class="modify-post" id="modifyPost">
-        <form class="container">
-            <label class="post-header">Modifer votre publication</label>
-            <input id="newTitle" class="post-title" type="text" placeholder="Quoi de neuf ?">
-            <input id="newContent" class="post-content" type="text" placeholder="Saluez vos collègues !">
-            <input id="addNewFile" type="file">
-            <button id="modify" class="publish-button" type="submit">Publiez !</button>
-        </form>
-    </section>
+        <section class="post--section">
+            <form class="container">
+                <label class="post-header">Créer votre publication</label>
+                <input id="newTitle" class="post post--title" type="text" placeholder="Votre titre">
+                <input id="newContent" class="post post--content" type="text" placeholder="Partagez avec vos collègues !">
+                <input type="file" id="addFile" class="btn btn--file">
+                <button id="modify" class="btn btn--log publish-button" type="submit">Publiez !</button>
+            </form>
+        </section>
 
     <script type="text/javascript" src="ajax.js"></script>
   
