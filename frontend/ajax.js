@@ -28,6 +28,7 @@ function appelAjax(options) {
             else if (this.readyState == XMLHttpRequest.DONE && this.status == 401) {
                 window.location.assign("connexion.html");
             }
+         
         };
         // Intanciation de la requete 
         request.open(options.method, "http://localhost:3000" + options.api);

@@ -12,13 +12,10 @@
 
 <body>
     <header>
-        <a href="connexion.html" class="nav-item"><img src="img/logout.png" alt="bouton déconnexion" class="nav--img logout"></a>
         <a href="main.html" class="logo nav-item"><img src="img/icon.png" alt="logo groupomania" class="nav--img"></a>
-        <a href="account.html" class="nav-item"><img src="img/account.png" alt="bouton accéder à votre compte"
-            class="nav--img"></a>
         </header>
 
-        <section class="post--section">
+        <div class="post--section">
             <form class="container">
                 <label class="post-header">Modifiez votre publication</label>
                 <input id="newTitle" class="post post--title" type="text" placeholder="Votre titre">
@@ -26,12 +23,10 @@
                 <input type="file" id="addNewFile" class="btn btn--file">
                 <button id="modify" class="btn btn--log publish-button" type="submit">Publiez !</button>
             </form>
-        </section>
+        </div>
 
-    <script type="text/javascript" src="ajax.js"></script>
-  
-    <script type="text/javascript" src="modifyPost.js"></script>
-
+    <script src="ajax.js"></script>
+    <script src="modifyPost.js"></script>
 
 
 </body>

@@ -45,6 +45,5 @@ class Post {
         });
         return listComment;
     }
-    // ajouter une fonction récupérant les données du post à modifier
 }
 

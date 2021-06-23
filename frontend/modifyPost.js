@@ -32,6 +32,7 @@ modifyBtn.addEventListener('click', function (e) {
             .then(() => {
                 var resultSuccess = "Votre post a bien été modifié !";
                 alert(resultSuccess);
+                localStorage.removeItem('modifyPostId');
                 window.location.assign('main.html');
             })
             .catch((resultFailed) => {

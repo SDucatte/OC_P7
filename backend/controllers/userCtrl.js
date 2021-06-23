@@ -3,17 +3,14 @@ var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 const { User } = require('../model/index');
 
+
 // Actions 
 
 // Création de l'utilsateur
 exports.signup = (req, res, next) => {
-// Vérification si l'user existe déjà
-User.findOne({
-  where: { email: req.body.email }
-})
-.then(user => {
-  if (!user) {
-    bcrypt.hash(req.body.password, 10)
+  //  Regex ?
+
+  bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
         name: req.body.name,
@@ -22,27 +19,15 @@ User.findOne({
         password: hash
       });
 
-      var name = req.body.name;
-      var lastName = req.body.lastName;
-      var email = req.body.email;
-      var password = hash;
-      
-      if (name == "" || lastName == "" || email == "" || password == "") {
-        return res.status(401).json({ error: 'Données manquantes !' });
-      }
-
-        user.save()
+      user.save()
         .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
         .catch(error => res.status(400).json({ error }));
-      
+
     })
-  }
-})
-
-
 
     .catch(error => res.status(500).json({ error }));
 };
+
 
 // Connexion de l'utilisateur
 exports.login = (req, res, next) => {
@@ -57,6 +42,7 @@ exports.login = (req, res, next) => {
       if (user.isDisable) {
         return res.status(401).json({ error: 'Compte désactivé !' });
       }
+
       bcrypt.compare(req.body.password, user.password)
         .then(valid => {
           if (!valid) {
@@ -121,3 +107,18 @@ exports.dropAccount = (req, res, next) => {
       res.status(500).json({ 'error': 'Une erreur s est produite !' });
     })
 };
+/*
+var name = req.body.name;
+var lastName = req.body.lastName;
+var email = req.body.email;
+var password = req.body.password;
+const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+if (name == "" || lastName == "" || email == "" || password == "") {
+  return res.status(401).json({ error: 'Données manquantes !' });
+}
+
+if (!regexMail.test(email)) {
+  return res.status(400).json({ 'error': 'email is not valid' });
+}
+
+*/

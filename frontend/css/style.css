@@ -57,6 +57,8 @@ header {
 .nav-item {
   color: rgba(48, 128, 207, 0.8);
   font-size: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo-connexion {
@@ -65,17 +67,20 @@ header {
   margin-left: auto;
 }
 
+.logo-mobile {
+  display: none;
+}
+
 /* page */
 .container--log {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: 5%;
   background-color: rgba(9, 31, 67, 0.95);
-  margin-left: 20%;
-  margin-right: 20%;
   border-radius: 30px;
+  width: 45%;
 }
 
 main {
@@ -84,11 +89,32 @@ main {
   padding: 10px;
 }
 
+.container--all {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* Titres */
 .title {
   color: white;
   font-weight: 400;
-  text-decoration: underline #d1515a;
+  text-align: center;
+}
+
+.title--animation {
+  border-bottom: solid 2px #d1515a;
+  height: 25px;
+  width: 200px;
+  position: absolute;
+  top: 120px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.title--animation:hover {
+  border-bottom: solid 2px #d1515a;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 label {
@@ -100,15 +126,15 @@ label {
 }
 
 /* Connexion*/
-.connexion {
-  padding-left: 5%;
-  padding-right: 5%;
+.connexion--block {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 80%;
 }
 
-.connexion--block {
+.inscription--block {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -154,10 +180,25 @@ label {
 
 /* Responsive */
 @media screen and (max-width: 800px) {
+  .container--all {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 800px) {
   .container--log {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .logo-laptop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+    max-height: 100px;
   }
 }
 /* Page account */
@@ -306,7 +347,7 @@ label {
 .drop-comment {
   position: relative;
   left: 95%;
-  top: 5%;
+  top: 40px;
   width: 30px;
 }
 
@@ -346,8 +387,6 @@ label {
 p {
   font-size: 20px;
   font-weight: 400;
-  font-weight: 300;
-  background-color: #091f43;
 }
 
 .post-card {
@@ -366,6 +405,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 15px;
+  margin-bottom: -2rem;
 }
 
 .content-comment {
@@ -425,6 +465,10 @@ p {
 .comment-section {
   max-height: 100px;
   margin-bottom: -1rem;
+}
+
+.input {
+  height: 20px;
 }
 
 /* Responsive */

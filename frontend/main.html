@@ -12,14 +12,13 @@
 
 <body>
     <header>
-        <a href="connexion.html" class="nav-item"><img src="img/logout.png" alt="bouton déconnexion" class="nav--img logout"></a>
+        <a href="connexion.html" id="logOut" class="nav-item"><img src="img/logout.png" alt="bouton déconnexion" class="nav--img logout"></a>
         <a href="main.html" class="logo nav-item"><img src="img/icon.png" alt="logo groupomania" class="nav--img"></a>
-        <a href="account.html" class="nav-item"><img src="img/account.png" alt="bouton accéder à votre compte"
-            class="nav--img"></a>
+        <a href="account.html" class="nav-item"><img src="img/account.png" alt="bouton accéder à votre compte" class="nav--img"></a>
         </header>
         
         <main>
-        <section class="post--section">
+        <div class="post--section">
             <form class="container">
                 <label class="post-header">Créer votre publication</label>
                 <input id="title" class="post post--title" type="text" placeholder="Votre titre">
@@ -27,7 +26,7 @@
                 <input type="file" id="addFile" class="btn btn--file">
                 <button id="publish" class="btn btn--log publish-button" type="submit">Publiez !</button>
             </form>
-        </section>
+        </div>
         
         
             <div id="wall" class="content">
@@ -35,12 +34,13 @@
                 
             </div>
         </main>
-
-        <script type="text/javascript" src="ajax.js"></script>
-        <script type="text/javascript" src="main.js"></script>
-        <script type="text/javascript" src="Post.js"></script>
-        <script type="text/javascript" src="Comment.js"></script>
-        <script type="text/javascript" src="utils.js"></script>
+        
+        <script src="ajax.js"></script>
+        <script src="main.js"></script>
+        <script src="utils.js"></script>
+        <script src="Post.js"></script>
+        <script src="Comment.js"></script>
+        
         
         
         

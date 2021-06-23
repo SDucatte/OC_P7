@@ -12,15 +12,17 @@
 
 <body>
     <header>
-        <img src="img/icon-left-font-monochrome-white-resize-min.png" alt="logo groupomania" class="logo-connexion">
+        <img src="img/icon-left-font-monochrome-white-resize-min.png" alt="logo groupomania" class="logo-connexion logo-laptop">
+        <img src="img/icon.png" alt="logo groupomania" class="logo-connexion logo-mobile">
     </header>
     
-<main>
-
-
+<main class="container--all">
 
     <section class="container--log connexion">
+        
         <h2 class="title">Connectez vous !</h2>
+        <span class="title--animation"></span>
+
         <div class="connexion--block">
             <div class="connexion--input">
                 <label>
@@ -41,33 +43,37 @@
     <section class="container--log inscription">
         <h2 class="title">Vous êtes nouveau ? Créez vous un compte !</h2>
         
-        <div class="connexion--block">
+        <div class="inscription--block">
             <div class="inscription--input">
                 <label>
                     Prénom
                 </label>
-                <input type="text" name="name" class="input">
+                <input type="text" name="name" class="input input--inscription">
+
             </div>
             
             <div class="inscription--input">
                 <label>
                     Nom
                 </label>
-                <input type="text" id="lastName" class="input">
+                <input type="text" id="lastName" class="input input--inscription">
+
             </div>
             
             <div class="inscription--input">
                 <label>
                     E-mail
                 </label>
-                <input type="email" name="email" class="input">
+                <input type="email" name="email" class="input input--inscription">
+
             </div>
             
             <div class="inscription--input">
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="password" class="input">
+                <input type="password" name="password" class="input input--inscription">
+
             </div>
             
             <button id="signup" class="btn btn--log">Inscription</button>
@@ -75,9 +81,9 @@
     </section>
     
 </main>
-    <script type="text/javascript" src="ajax.js"></script>
-    <script type="text/javascript" src="connexion.js"></script>
-    <script type="text/javascript" src="utils.js"></script>
+    <script src="ajax.js"></script>
+    <script src="connexion.js"></script>
+    <script src="utils.js"></script>
     
 </body>
 </html>

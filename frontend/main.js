@@ -1,52 +1,77 @@
+// Fonction logout
+function logout() {
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('token');
+    var resultSuccess = "Vous avez été déconnecté avec succès !";
+    alert(resultSuccess);
+
+}
+
+let logoutBtn = document.getElementById('logOut');
+logoutBtn.addEventListener('click', function () {
+    logout();
+});
+
 // Affichage de tous les post
-appelAjax({ api: "/api/post" }).then((listPost) => {
-    listPost.forEach(postJson => {
-        var post = new Post(postJson);
-        document.getElementById('wall').innerHTML += post.showPost();
-    });
-    // Ajout + affichage commentaire
-    let commentBtn = document.querySelectorAll('.comment-button');
-    commentBtn.forEach(btn => {
-        btn.addEventListener('click', function () {
-            let comment = this.closest('.content-comment').querySelector('.comment-input').value;
-            let postId = this.closest('.post-card').dataset.id;
-            addComment(comment, postId);
-        });
-    });
-    // Suppression Post
-    let dropBtn = document.querySelectorAll('.dropbtn');
-    dropBtn.forEach(otherBtn => {
-        otherBtn.addEventListener('click', function () {
-            let dropPostId = this.closest(".post-card").dataset.id;
-            dropPost(dropPostId);
-        });
-    });
-
-    // Modification de post
-    let modifyBtn = document.querySelectorAll('.modifybtn');
-    modifyBtn.forEach(otherBtn => {
-        otherBtn.addEventListener('click', function () {
-            let modifyPostId = this.closest(".post-card").dataset.id;
-            localStorage.setItem('modifyPostId', modifyPostId);
-        });
-    });
-
-    // Suppression Commentaire
-
-    let dropCommentBtn = document.querySelectorAll('.drop-comment');
-    dropCommentBtn.forEach(anotherBtn => {
-        anotherBtn.addEventListener('click', function () {
-            let dropCommentId = this.closest(".comment-section").dataset.commentid;
-            dropComment(dropCommentId);
-        });
-    });
-
-})
-
+appelAjax({ api: "/api/post" })
+    .then((listPost) => {
+        listPost.forEach(postJson => {
+            var post = new Post(postJson);
+            document.getElementById('wall').innerHTML += post.showPost();
+        })
+    })
     .catch((failed) => {
         var failed = "Oups, une erreur s'est produite !";
         alert(failed);
     });
+
+// Ajout des écouteurs d'événements sur les posts
+appelAjax({ api: "/api/post" })
+    .then(() => {
+        // Ajout + affichage commentaire
+        let commentBtn = document.querySelectorAll('.comment-button');
+        commentBtn.forEach(btn => {
+            btn.addEventListener('click', function () {
+                let comment = this.closest('.content-comment').querySelector('.comment-input').value;
+                let postId = this.closest('.post-card').dataset.id;
+                addComment(comment, postId);
+            });
+        });
+        // Suppression Post
+        let dropBtn = document.querySelectorAll('.dropbtn');
+        dropBtn.forEach(otherBtn => {
+            otherBtn.addEventListener('click', function () {
+                let dropPostId = this.closest(".post-card").dataset.id;
+                dropPost(dropPostId);
+            });
+        });
+
+        // Modification de post
+        let modifyBtn = document.querySelectorAll('.modifybtn');
+        modifyBtn.forEach(otherBtn => {
+            otherBtn.addEventListener('click', function () {
+                let modifyPostId = this.closest(".post-card").dataset.id;
+                localStorage.setItem('modifyPostId', modifyPostId);
+            });
+        });
+
+        // Suppression Commentaire
+
+        let dropCommentBtn = document.querySelectorAll('.drop-comment');
+        dropCommentBtn.forEach(anotherBtn => {
+            anotherBtn.addEventListener('click', function () {
+                let dropCommentId = this.closest(".comment-section").dataset.commentid;
+                dropComment(dropCommentId);
+            });
+        });
+
+    })
+    .catch((failed) => {
+        var failed = "Oups, une erreur s'est produite !";
+        alert(failed);
+    });
+
 
 
 
@@ -81,10 +106,20 @@ publish.addEventListener('click', function (e) {
             data: data,
             status: 201
         })
-            .then(() => {
+
+            .then((result) => {
                 var resultSuccess = "Votre post a bien été publié !";
                 alert(resultSuccess);
-                window.location.reload();
+                var post = new Post(result);
+                document.getElementById('wall').insertAdjacentHTML('afterbegin', post.showPost());
+                let commentBtn = document.querySelector('.comment-button');
+                commentBtn.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        let comment = this.closest('.content-comment').querySelector('.comment-input').value;
+                        let postId = this.closest('.post-card').dataset.id;
+                        addComment(comment, postId);
+                    });
+                });
             })
             .catch((resultFailed) => {
                 var resultFailed = "Oups, une erreur s'est produite !";
@@ -94,13 +129,7 @@ publish.addEventListener('click', function (e) {
     }
 });
 
-
-
-
-
-
 // Fonction addComment
-
 function addComment(comment, postId) {
     let valid = true
     if (comment == "") {
@@ -128,7 +157,7 @@ function addComment(comment, postId) {
             .then(() => {
                 var resultSuccess = "Votre commentaire a bien été publié !";
                 alert(resultSuccess);
-                window.location.reload();
+                // Refaire la logique de la création de post
             })
             .catch((resultFailed) => {
                 var resultFailed = "Oups, une erreur s'est produite !";
@@ -172,4 +201,3 @@ function dropComment(dropCommentId) {
             alert(resultFailed);
         });
 }
-

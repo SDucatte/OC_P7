@@ -14,6 +14,7 @@ const User = bdd.define('User', {
     },
     email: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false
     },
     password: {

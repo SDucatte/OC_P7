@@ -39,11 +39,18 @@ exports.createPost = (req, res, next) => {
     }
     Post.create({
         ...userPost
+    }, {
+        include: { all: true, nested: true }
     })
-        .then(() => {
-            res.status(201).json({
-                message: 'Post enregistré !'
+        .then((post) => {
+            Post.findOne({
+                where: { id: post.id },
+                include: { all: true, nested: true }
             })
+                .then(thePost => {
+                    res.status(201).json(thePost);
+                })
+                .catch(error => res.status(500).json({ error }));
         })
         .catch((err) => {
             res.status(500).json({ 'error': 'Une erreur s est produite !' });

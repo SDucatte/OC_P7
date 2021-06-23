@@ -9,6 +9,10 @@ Post.hasMany(Comment);
 
 Comment.belongsTo(User);
 
+// Suppression en cascade
+User.hasMany(Post, {onDelete: 'cascade'});
+User.hasMany(Comment, {onDelete: 'cascade'});
+
 // Synchronisation automatique
 User.sync({alter: true});
 Post.sync({alter: true});
