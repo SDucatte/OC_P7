@@ -26,6 +26,7 @@ appelAjax({ api: "/api/post" })
         alert(failed);
     });
 
+
 // Ajout des écouteurs d'événements sur les posts
 appelAjax({ api: "/api/post" })
     .then(() => {
@@ -110,16 +111,9 @@ publish.addEventListener('click', function (e) {
             .then((result) => {
                 var resultSuccess = "Votre post a bien été publié !";
                 alert(resultSuccess);
-                var post = new Post(result);
-                document.getElementById('wall').insertAdjacentHTML('afterbegin', post.showPost());
-                let commentBtn = document.querySelector('.comment-button');
-                commentBtn.forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        let comment = this.closest('.content-comment').querySelector('.comment-input').value;
-                        let postId = this.closest('.post-card').dataset.id;
-                        addComment(comment, postId);
-                    });
-                });
+                window.location.reload();
+
+                
             })
             .catch((resultFailed) => {
                 var resultFailed = "Oups, une erreur s'est produite !";
@@ -157,6 +151,7 @@ function addComment(comment, postId) {
             .then(() => {
                 var resultSuccess = "Votre commentaire a bien été publié !";
                 alert(resultSuccess);
+                window.location.reload();  
                 // Refaire la logique de la création de post
             })
             .catch((resultFailed) => {
@@ -177,6 +172,7 @@ function dropPost(dropPostId) {
             var resultSuccess = "Votre Post a bien été supprimé !";
             alert(resultSuccess);
             window.location.reload();
+
         })
         .catch((resultFailed) => {
             var resultFailed = "Il semblerait que ce ne soit pas votre post !";

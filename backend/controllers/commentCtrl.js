@@ -8,7 +8,12 @@ const { Comment, Post, User } = require('../model/index');
 
 // Récupération de tous les commentaires
 exports.getAllComment = (req, res, next) => {
-    Comment.findAll({ include: Post })
+    Comment.findAll({
+         include: Post,
+         order: [
+            ["createdAt", "DESC"]
+        ]
+        })
         .then(listComment => {
             res.status(200).json(listComment);
         })
