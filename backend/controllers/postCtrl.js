@@ -1,6 +1,7 @@
 // Imports
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
+// const { where } = require('sequelize/types');
 // const { and } = require('sequelize/types');
 
 const { Post, User, Comment } = require('../model/index');
@@ -8,6 +9,7 @@ const { Post, User, Comment } = require('../model/index');
 // Actions 
 //  Récupération de tous les posts
 exports.getAllPost = (req, res, next) => {
+    // Récupérer tous les posts pour n'afficher que ceux des comptes valides 
     Post.findAll({
         include: { all: true, nested: true },
         order: [

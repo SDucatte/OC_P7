@@ -99,16 +99,7 @@ main {
   color: white;
   font-weight: 400;
   text-align: center;
-}
-
-.title--animation {
-  border-bottom: solid 2px #d1515a;
-  height: 25px;
-  width: 200px;
-  position: absolute;
-  top: 120px;
-  opacity: 0;
-  transition: opacity 1s;
+  text-decoration: underline #d1515a;
 }
 
 .title--animation:hover {
@@ -122,7 +113,6 @@ label {
   font-size: 20px;
   margin-bottom: 5px;
   padding-bottom: 5px;
-  text-decoration: underline #d1515a;
 }
 
 /* Connexion*/

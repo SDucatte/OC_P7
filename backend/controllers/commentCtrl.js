@@ -9,10 +9,8 @@ const { Comment, Post, User } = require('../model/index');
 // Récupération de tous les commentaires
 exports.getAllComment = (req, res, next) => {
     Comment.findAll({
-         include: Post,
-         order: [
-            ["createdAt", "DESC"]
-        ]
+        // Récupérer tous les commentaires pour n'afficher que ceux des comptes valides 
+         include: Post
         })
         .then(listComment => {
             res.status(200).json(listComment);

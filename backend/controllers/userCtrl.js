@@ -8,8 +8,6 @@ const { User } = require('../model/index');
 
 // Création de l'utilsateur
 exports.signup = (req, res, next) => {
-  //  Regex ?
-
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
@@ -90,12 +88,7 @@ exports.dropAccount = (req, res, next) => {
     where: { id: req.token.userId }
   })
     .then((user) => {
-      user.isDisable = true;
-      user.name = "compte supprimé",
-        user.lastName = "",
-        user.email = "",
-        user.password = ""
-      user.save()
+      user.destroy()
         .then(user => {
           res.status(200).json(user);
         })
@@ -107,18 +100,3 @@ exports.dropAccount = (req, res, next) => {
       res.status(500).json({ 'error': 'Une erreur s est produite !' });
     })
 };
-/*
-var name = req.body.name;
-var lastName = req.body.lastName;
-var email = req.body.email;
-var password = req.body.password;
-const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-if (name == "" || lastName == "" || email == "" || password == "") {
-  return res.status(401).json({ error: 'Données manquantes !' });
-}
-
-if (!regexMail.test(email)) {
-  return res.status(400).json({ 'error': 'email is not valid' });
-}
-
-*/
